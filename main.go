@@ -42,6 +42,9 @@ func captureAndFingerprint(pCapturedSamples []byte) ([]byte, error) {
 }
 
 func convertToFloat32(samples []byte) []float32 {
+	// Implement the conversion from PCM samples to float32 values here
+	// You need to consider the sample size, endianness, and audio format
+	// Return the converted float32 audio data
 	numSamples := len(samples) / 2 // Assuming 16-bit samples
 
 	floatData := make([]float32, numSamples)
@@ -58,6 +61,9 @@ func convertToFloat32(samples []byte) []float32 {
 }
 
 func splitIntoSegments(audioData []float32) [][]float32 {
+	// Implement the logic to split the audio into segments of fixed duration
+	// The segment size and hop size are predefined constants
+	// Return a 2D slice where each row represents a segment
 	numSamples := len(audioData)
 	segmentCount := (numSamples-segmentSize)/hopSize + 1
 
